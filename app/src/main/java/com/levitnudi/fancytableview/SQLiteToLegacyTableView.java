@@ -58,7 +58,11 @@ public class SQLiteToLegacyTableView extends AppCompatActivity {
         //using readLegacyTitle() and readLegacyContent() methods
         legacyTableView.setTitle(LegacyTableView.readLegacyTitle());
         legacyTableView.setContent(LegacyTableView.readLegacyContent());
-
+        //if you want a smaller table, change the padding setting
+        legacyTableView.setTablePadding(7);
+        //to enable users to zoom in and out:
+        legacyTableView.setZoomEnabled(true);
+        legacyTableView.setShowZoomControls(true);
         //remember to build your table as the last step
         legacyTableView.build();
 

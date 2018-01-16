@@ -72,6 +72,11 @@ public class LegacyTableViewThemes extends AppCompatActivity {
         legacyTableView.setContent(LegacyTableView.readLegacyContent());
         legacyTableView.setTheme(THEME);
         legacyTableView.setBottomShadowVisible(false);
+        //if you want a smaller table, change the padding setting
+        legacyTableView.setTablePadding(7);
+        //to enable users to zoom in and out:
+        legacyTableView.setZoomEnabled(true);
+        legacyTableView.setShowZoomControls(true);
 
         //remember to build your table as the last step
         legacyTableView.build();

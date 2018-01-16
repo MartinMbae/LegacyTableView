@@ -84,7 +84,7 @@ public class CustomLegacyTableView extends AppCompatActivity {
 
         tableView.setTitleTextAlignment(CENTER);
         tableView.setContentTextAlignment(CENTER);
-        tableView.setTablePadding(20);//increasing spacing will increase the table size
+        tableView.setTablePadding(7);//increasing spacing will increase the table size
         //tableView.setBottomShadowColorTint("#ffffff");
 
         //tableView.setBackgroundEvenColor("#FFCCBC");
@@ -99,7 +99,7 @@ public class CustomLegacyTableView extends AppCompatActivity {
         tableView.setShowZoomControls(true);
         //by default the initial scale is 100, you
         // may change this depending on various screen sizes
-        tableView.setInitialScale(90);
+        //tableView.setInitialScale(100);
         tableView.setContentTextColor("#009688");
         tableView.build();
 
