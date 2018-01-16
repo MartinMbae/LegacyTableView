@@ -83,14 +83,14 @@ Add the following lines...
         
         //depending on the phone screen size default table scale is 100
         //you can change it using this method
-        //tableView.setInitialScale(90);
+        //legacyTableView.setInitialScale(90);
         
         //if you want a smaller table, change the padding setting
-        tableView.setTablePadding(7);
+        legacyTableView.setTablePadding(7);
         
         //to enable users to zoom in and out:
-        tableView.setZoomEnabled(true);
-        tableView.setShowZoomControls(true);
+        legacyTableView.setZoomEnabled(true);
+        legacyTableView.setShowZoomControls(true);
 
         //remember to build your table as the last step
         legacyTableView.build();
@@ -133,14 +133,14 @@ Add the following lines...
         
         //depending on the phone screen size default table scale is 100
         //you can change it using this method
-        //tableView.setInitialScale(90);
+        //legacyTableView.setInitialScale(90);
         
         //if you want a smaller table, change the padding setting
-        tableView.setTablePadding(7);
+        legacyTableView.setTablePadding(7);
         
         //to enable users to zoom in and out:
-        tableView.setZoomEnabled(true);
-        tableView.setShowZoomControls(true);
+        legacyTableView.setZoomEnabled(true);
+        legacyTableView.setShowZoomControls(true);
 
         //remember to build your table as the last step
         legacyTableView.build();
