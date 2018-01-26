@@ -99,7 +99,7 @@ public class CustomLegacyTableView extends AppCompatActivity {
         tableView.setShowZoomControls(true);
         //by default the initial scale is 100, you
         // may change this depending on various screen sizes
-        //tableView.setInitialScale(100);
+        //tableView.setInitialScale(100);//default initial scale is 0 (normal size)
         tableView.setContentTextColor("#009688");
         tableView.build();
 
