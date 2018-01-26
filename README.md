@@ -83,7 +83,7 @@ Add the following lines...
         
         //depending on the phone screen size default table scale is 100
         //you can change it using this method
-        //legacyTableView.setInitialScale(90);
+        //legacyTableView.setInitialScale(100);//default initialScale is zero (0)
         
         //if you want a smaller table, change the padding setting
         legacyTableView.setTablePadding(7);
@@ -133,7 +133,7 @@ Add the following lines...
         
         //depending on the phone screen size default table scale is 100
         //you can change it using this method
-        //legacyTableView.setInitialScale(90);
+        //legacyTableView.setInitialScale(100);//default initialScale is zero (0)
         
         //if you want a smaller table, change the padding setting
         legacyTableView.setTablePadding(7);
@@ -240,9 +240,9 @@ Add the following lines...
         tableView.setTitleFont(BOLD);
         tableView.setZoomEnabled(true);
         tableView.setShowZoomControls(true);
-        //by default the initial scale is 100, you
-        // may change this depending on various screen sizes
-        tableView.setInitialScale(90);
+        //by default the initial scale is 0, you
+        // may change this depending on initiale scale preferences
+        //tableView.setInitialScale(100);//default initialScale is zero (0)
         tableView.setContentTextColor("#009688");
         tableView.build();
       
