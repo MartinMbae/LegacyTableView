@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.webkit.WebView;
+
 import com.levitnudi.legacytableview.LegacyTableView;
 
 /*
@@ -34,6 +36,7 @@ public class SimpleLegacyTableView extends AppCompatActivity {
         //do something when user presses back
         finish();
     }
+    LegacyTableView legacyTableView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +57,11 @@ public class SimpleLegacyTableView extends AppCompatActivity {
                 ,"42343243", "Java Lover", "28", "Jlover@example.com"
                 ,"4288383", "Mike Tee", "22", "miket@example.com");
 
-        LegacyTableView legacyTableView = (LegacyTableView)findViewById(R.id.legacy_table_view);
+        legacyTableView = (LegacyTableView)findViewById(R.id.legacy_table_view);
         legacyTableView.setTitle(LegacyTableView.readLegacyTitle());
         legacyTableView.setContent(LegacyTableView.readLegacyContent());
         //if you want a smaller table, change the padding setting
-        legacyTableView.setTablePadding(7);
+        //legacyTableView.setTablePadding(7);
         //to enable users to zoom in and out:
         legacyTableView.setZoomEnabled(true);
         legacyTableView.setShowZoomControls(true);

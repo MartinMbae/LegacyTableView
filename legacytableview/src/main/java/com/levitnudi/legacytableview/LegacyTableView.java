@@ -38,7 +38,7 @@ public class LegacyTableView extends WebView {
     private static String TABLE_CONTENT_STRINGS = "";
     private static String TABLE_TITLE_STRINGS = "";
     private static String TABLE_FOOTER = "";
-    public static int INITIAL_SIZE = 0;
+    public static int INITIAL_SIZE = 100;
     public String TABLE_BOX_SHADOW = "#888888";
     private static String TABLE_BORDER_SOLID = "#07214f";
     private static String TABLE_BACKGROUND_ODD = "#ffffff";
@@ -119,25 +119,25 @@ public class LegacyTableView extends WebView {
     }
 
     public void setTheme(int theme){
-      this.TABLE_THEME = theme;
+        this.TABLE_THEME = theme;
     }
 
 
     //public static class HighlightAlternate{
-        public static int ODD = 0;
-        public static int EVEN = 1;
-        public static int DEFAULT = 2;
+    public static int ODD = 0;
+    public static int EVEN = 1;
+    public static int DEFAULT = 2;
     //}
 
     //public static class Font{
-        public static int NORMAL = 0;
-        public static int BOLD = 1;
+    public static int NORMAL = 0;
+    public static int BOLD = 1;
     //}
 
     //public static class Alignment{
-        public static int LEFT = 0;
-        public static int RIGHT = 1;
-        public static int CENTER = 2;
+    public static int LEFT = 0;
+    public static int RIGHT = 1;
+    public static int CENTER = 2;
     //}
 
  /*   public static class FontFamily{
@@ -149,7 +149,6 @@ public class LegacyTableView extends WebView {
         public static int GEORGIA = 5;
         public static int BOOKMAN = 6;
         public static int COMIC_SANS_NEW = 7;
-
     }*/
 
 
@@ -161,8 +160,23 @@ public class LegacyTableView extends WebView {
         String completeHtmlData = new LegacyDataHelper().generateLegacyData();
         this.loadData(completeHtmlData, "text/html", "UTF-8");
         //clear data
-        TABLE_CONTENT_STRINGS = "";
-        TABLE_TITLE_STRINGS = "";
+        this.TABLE_CONTENT_STRINGS = "";
+        this.TABLE_TITLE_STRINGS = "";
+        this.tableContent.clear();
+    }
+
+    public void rebuild(){
+        initializeTheme();
+        contrasts();
+        configure();
+        BuildTable();
+        String completeHtmlData = new LegacyDataHelper().generateLegacyData();
+        //reloads with loadDataWithBaseUrl (don't use this line on build as it may not load some css data) :- ONLY FOR REBUILDS
+        this.loadDataWithBaseURL(null,completeHtmlData,"text/html", "UTF-8", null);
+        //clear data
+        this.TABLE_CONTENT_STRINGS = "";
+        this.TABLE_TITLE_STRINGS = "";
+        this.tableContent.clear();
     }
 
 
@@ -173,29 +187,29 @@ public class LegacyTableView extends WebView {
 
 
     private void contrasts(){
-       switch (TABLE_HighlightAlternate){
-           case 0:
-               TABLE_BACKGROUND_EVEN = PLAIN_WHITE_COLOR;
-               return;
-           case 1:
-               TABLE_BACKGROUND_ODD = PLAIN_WHITE_COLOR;
-               return;
-           case 2:
-               TABLE_BACKGROUND_EVEN = PLAIN_WHITE_COLOR;
-               TABLE_BACKGROUND_ODD = PLAIN_WHITE_COLOR;
-               return;
-           default:
-               TABLE_BACKGROUND_EVEN = PLAIN_WHITE_COLOR;
-               TABLE_BACKGROUND_ODD = PLAIN_WHITE_COLOR;
-               return;
+        switch (TABLE_HighlightAlternate){
+            case 0:
+                TABLE_BACKGROUND_EVEN = PLAIN_WHITE_COLOR;
+                return;
+            case 1:
+                TABLE_BACKGROUND_ODD = PLAIN_WHITE_COLOR;
+                return;
+            case 2:
+                TABLE_BACKGROUND_EVEN = PLAIN_WHITE_COLOR;
+                TABLE_BACKGROUND_ODD = PLAIN_WHITE_COLOR;
+                return;
+            default:
+                TABLE_BACKGROUND_EVEN = PLAIN_WHITE_COLOR;
+                TABLE_BACKGROUND_ODD = PLAIN_WHITE_COLOR;
+                return;
 
-       }
+        }
 
     }
 
     private void configure(){
         if(!SHOW_BOX_SHADOW){
-        TABLE_BOX_SHADOW = TRANSPARENT_COLOR;
+            TABLE_BOX_SHADOW = TRANSPARENT_COLOR;
         }
     }
 
@@ -344,7 +358,7 @@ public class LegacyTableView extends WebView {
     private String resolveTableTitle(String[] array){
         String tableData = "";
         for(int i=0; i<array.length; i++){
-                tableData += TABLE_COLUMN_TITLE[i] + COLUMN_SEPERATOR;
+            tableData += TABLE_COLUMN_TITLE[i] + COLUMN_SEPERATOR;
         }
         return tableData;
     }
@@ -380,7 +394,7 @@ public class LegacyTableView extends WebView {
     }
 
     public static String getLegacyColumnSeperator(){
-      return LEGACY_COLUMN_SEPERATOR;
+        return LEGACY_COLUMN_SEPERATOR;
     }
 
     public static String getRowSeperator(){
@@ -420,25 +434,25 @@ public class LegacyTableView extends WebView {
     }
 
 
-   public void setTitleFont(int tableTitleFont){
-       switch (tableTitleFont){
-           case 0:
-               this.TABLE_TITLE_FONT = "normal";
-               return;
-           case 1:
-               this.TABLE_TITLE_FONT = "bold";
-               return;
-           case 2:
-               this.TABLE_TITLE_FONT = "italic";
-               return;
-           case 3:
-               this.TABLE_TITLE_FONT = "bold-italic";
-               return;
-           default:
-               this.TABLE_TITLE_FONT = "normal";
-               return;
-       }
-   }
+    public void setTitleFont(int tableTitleFont){
+        switch (tableTitleFont){
+            case 0:
+                this.TABLE_TITLE_FONT = "normal";
+                return;
+            case 1:
+                this.TABLE_TITLE_FONT = "bold";
+                return;
+            case 2:
+                this.TABLE_TITLE_FONT = "italic";
+                return;
+            case 3:
+                this.TABLE_TITLE_FONT = "bold-italic";
+                return;
+            default:
+                this.TABLE_TITLE_FONT = "normal";
+                return;
+        }
+    }
 
 
     public void setTableContentTextAlignment(int contentFont){
@@ -458,25 +472,25 @@ public class LegacyTableView extends WebView {
         }
     }
 
-   public void setContentFont(int contentFont){
-       switch (contentFont){
-           case 0:
-               this.TABLE_CONTENT_FONT = "normal";
-               return;
-           case 1:
-               this.TABLE_CONTENT_FONT = "bold";
-               return;
-           case 2:
-               this.TABLE_CONTENT_FONT = "italic";
-               return;
-           case 3:
-               this.TABLE_CONTENT_FONT = "bold-italic";
-               return;
-           default:
-               this.TABLE_CONTENT_FONT = "normal";
-               return;
-       }
-   }
+    public void setContentFont(int contentFont){
+        switch (contentFont){
+            case 0:
+                this.TABLE_CONTENT_FONT = "normal";
+                return;
+            case 1:
+                this.TABLE_CONTENT_FONT = "bold";
+                return;
+            case 2:
+                this.TABLE_CONTENT_FONT = "italic";
+                return;
+            case 3:
+                this.TABLE_CONTENT_FONT = "bold-italic";
+                return;
+            default:
+                this.TABLE_CONTENT_FONT = "normal";
+                return;
+        }
+    }
 
     public void setFooterFont(int contentFont){
         switch (contentFont){
@@ -867,7 +881,7 @@ public class LegacyTableView extends WebView {
                     ".TableStyle tr:nth-child(even)    { background-color:" +TABLE_BACKGROUND_EVEN +"; }.TableStyle td{"+
                     "vertical-align:middle;"+
 
-                     //TABLE CONTENT STYLES
+                    //TABLE CONTENT STYLES
                     "border:1px solid"+ TABLE_BORDER_SOLID +";"+
                     "border-width:0px 1px 1px 0px;"+
                     "text-align:"+TABLE_CONTENT_TEXT_ALIGNMENT+";"+
@@ -887,7 +901,7 @@ public class LegacyTableView extends WebView {
                     "background:-o-linear-gradient(bottom,"+TABLE_BACKGROUND_LINEAR_GRADIENT_TOP+" 5%, "+TABLE_BACKGROUND_LINEAR_GRADIENT_BOTTOM+" 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, "+TABLE_BACKGROUND_LINEAR_GRADIENT_TOP+"), color-stop(1, "+TABLE_BACKGROUND_LINEAR_GRADIENT_BOTTOM+") );"+
                     "background:-moz-linear-gradient( center top, "+TABLE_BACKGROUND_LINEAR_GRADIENT_TOP+" 5%, "+TABLE_BACKGROUND_LINEAR_GRADIENT_BOTTOM+" 100% );"+
                     "filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="+TABLE_BACKGROUND_LINEAR_GRADIENT_TOP+", endColorstr="+TABLE_BACKGROUND_LINEAR_GRADIENT_BOTTOM+");	background: -o-linear-gradient(top,"+TABLE_BACKGROUND_LINEAR_GRADIENT_TOP+",003f7f);"+
-                     //TITLE STYLES
+                    //TITLE STYLES
                     "background-color:"+TABLE_BACKGROUND_LINEAR_GRADIENT_TOP+";"+
                     "border:0px solid"+TABLE_BORDER_SOLID+";"+
                     "text-align:"+TABLE_TITLE_TEXT_ALIGNMENT+";"+

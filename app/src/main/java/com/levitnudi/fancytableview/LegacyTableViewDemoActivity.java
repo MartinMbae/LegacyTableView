@@ -47,7 +47,7 @@ public class LegacyTableViewDemoActivity extends AppCompatActivity {
 
 
         String[] legacyList = new String[] { "SimpleLegacyTableView", "CustomLegacyTableView","SQLiteToLegacyTableView",
-                "LegacyTableViewThemes"};
+                "LegacyTableViewThemes", "Update LegacyTableView"};
 
         listView = (ListView) findViewById(R.id.listview);
 
@@ -78,6 +78,9 @@ public class LegacyTableViewDemoActivity extends AppCompatActivity {
                      return;
                  case 3:
                      startActivity(new Intent(getApplicationContext(), LegacyThemesDemoActivity.class));
+                     return;
+                 case 4://new feature for creating dynamic tables / updating data on existing table
+                     startActivity(new Intent(getApplicationContext(), UpdateTableDemo.class));
                      return;
 
              }

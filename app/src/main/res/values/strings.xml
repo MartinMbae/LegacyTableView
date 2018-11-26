@@ -15,5 +15,6 @@
     <string name="github" translatable="false"><a href="https://github.com/levitnudi/LegacyTableView">\nProject source code from Github</a></string>
     <string name="linkein"><a href="https://www.linkedin.com/in/levitnudi/">\nAbout the author (Linkedin)</a></string>
     <string name="buy_me_cofee"><a href="https://levitnudi7.wixsite.com/legacy">\nIf you like this, buy me cofee! :)</a></string>
+    <string name="title_activity_update_table_demo">UpdateTableDemo</string>
 
 </resources>
