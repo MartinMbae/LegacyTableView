@@ -2,7 +2,8 @@
 simple light weight android library for displaying tabulated data
 
 This is a simple android library that will help you include tables in your projects using a few lines of code.
-Follow very simple examples in the sample LegcyTableView project.
+Follow very simple examples in the sample LegcyTableView project. Write data dynamically, translate into different languages,
+update themes, colors, fonts etc...
 
 
 
@@ -42,7 +43,10 @@ Add jitpack.io to your root gradle file
  
  ```gradle
        dependencies {
-	                compile 'com.github.levitnudi:LegacyTableView:1.2'
+	                implementation 'com.github.levitnudi:LegacyTableView:master-SNAPSHOT'
+	}
+
+
 	             } 
       
 
